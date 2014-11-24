@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- index.xhtml -->
+<!-- Validating user input -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Validating Form Data</title>
+	  <link rel="stylesheet" type="text/css" href="#{request.contextPath}/Resources/style.css" />
+   </h:head>
+   
+   <h:body>   
+		<div class="container">
+  			<div class="header">
+ 				<div id="navmenu">
+					<ul>    
+    					<li><a href="#"><img src="Resources/images.jpg" name="Insert_logo" id="Insert_logo"/></a></li>
+    					<li><a href="index.xhtml">HOME</a>
+        				</li>
+ 						<li><a href="info.xhtml">ACTIVITIES</a>
+        				</li>
+        				<li><a href="">CONTACTS</a>
+        				</li>  
+					</ul>
+				</div>
+			</div><br /><br />
+  			<div class="content" style="margin-left: 50px;">
+   			 	<h2>Please fill out the following form:</h2>
+        	 	<p>All fields are required and must contain valid information</p>
+   		   		<div style="margin-left: 12px;">
+   					<h:form>    			
+         				<h:panelGrid columns="3">
+            				<h:outputText value="First Name:"/>
+            				<h:inputText id="FirstNameInputText" required="true"
+               					requiredMessage="Please enter your First name"
+               					value="#{validationBean.firstName}"
+               					validatorMessage="First Name must be between 3 and 20 characters">
+               					<f:validateLength minimum="3" maximum="20" />
+            				</h:inputText>
+            				<h:message for="FirstNameInputText" styleClass="error"/>
+            				<h:outputText value="Last Name:"/>
+            				<h:inputText id="LastNameInputText" required="true"
+               					requiredMessage="Please enter your last name"
+               					value="#{validationBean.lastName}"
+               					validatorMessage="Last Name must be between 3 and 20 characters">
+               					<f:validateLength minimum="3" maximum="20" />
+            				</h:inputText>
+            				<h:message for="LastNameInputText" styleClass="error"/>
+                        	<h:outputText value="E-mail:"/>
+            				<h:inputText id="emailInputText" required="true"
+               					requiredMessage="Please enter a valid e-mail address"
+               					value="#{validationBean.email}"
+               					validatorMessage="Invalid e-mail address format">
+               					<f:validateRegex pattern=
+                  				"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+            				</h:inputText>
+            				<h:message for="emailInputText" styleClass="error"/>
+ 				            <h:outputText value="Team:"/>
+            				<h:inputText id="TeamInputText" required="true"
+              	 				requiredMessage="Please enter your team"
+               					value="#{validationBean.team}"
+               					validatorMessage="Team must be between 3 and 30 characters">
+               					<f:validateLength minimum="3" maximum="30" />
+            				</h:inputText>
+            				<h:message for="TeamInputText" styleClass="error"/>         
+							<h:outputText value="Activity:"/>
+  							<h:selectOneMenu value="#{validationBean.activity}">
+   								<f:selectItems value="#{validationBean.availbleActivities}" />
+							</h:selectOneMenu>
+         	         </h:panelGrid>        
+         		<h:commandButton value="Submit" action="#{validationBean.saveSubscriber}"/>
+      		</h:form>
+ 		</div><br /><br />    
+    </div>
+  	<div class="footer">
+    <!-- end .footer --></div>
+  	<!-- end .container --></div>
+   </h:body>
+</html>
+
+
+

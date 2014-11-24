@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Details</title>
+	  <link rel="stylesheet" type="text/css" href="#{request.contextPath}/Resources/style.css" />
+   </h:head>
+   <h:body>
+	<div class="container">
+  	<div class="header">
+ 	<div id="navmenu">
+		<ul>    
+    	<li><a href="#"><img src="Resources/images.jpg" name="Insert_logo" id="Insert_logo"/></a></li>
+    	<li><a href="index.xhtml">HOME</a>
+        </li>
+ 		<li><a href="info.xhtml">ACTIVITIES</a>
+        </li>
+        <li><a href="">CONTACTS</a>
+        </li>        
+		</ul>
+	</div>
+    <!-- end .header --></div>
+  	<div class="content">
+   		<br />
+   		<h2>Activities Info</h2>
+   		<p></p>
+   		<p></p>
+ <p><b>Football</b></p>
+<p><b>Occurrence:</b> First three weeks of June, every Tuesday and Wednesday, games starts at 18:30 <br />
+<b>Description:</b> You can either register individually or as a team. This is the third edition of the basketball tournament – come and join the fun. Each team consist of 11 players. You can find all information in the regulations of the tournament. <br />
+<b>Location:</b> Arena Armeec <br />
+<b>Places remaining: </b><h:outputText value="#{places.returnPlaces('Football')}" /> </p><br />
+
+ 
+ 
+<p><b>BasketBall</b></p>
+ 
+<p><b>Occurrence:</b> First three weeks of June, every Tuesday and Wednesday, games starts at 19:00 <br />
+<b>Description:</b> You can either register individually or as a team. This is the third edition of the basketball tournament – come and join the fun. Each team consist of min 3, max 5 players. You can find all information in the regulations of the tournament. <br />
+<b>Location:</b> Arena Armeec <br />
+<b>Places remaining: </b><h:outputText value="#{places.returnPlaces('Basketball')}" /> </p><br />
+ 
+ 
+<p><b>VolleyBall</b></p>
+ 
+<p><b>Occurrence: </b>First three weeks of June, every Monday and Thursday, games starts at 18:30<br /> 
+<b>Description:</b> You can either register individually or as a team. This is the first volleyball tournament – come and join the fun. Each team consist of min 6, max 10 players. You can find all information in the regulations of the tournament.<br /> 
+<b>Location:</b> “Overgaz Schkolo”, Mladost 2 <br />
+<b>Places remaining: </b><h:outputText value="#{places.returnPlaces('Volleyball')}" /> </p><br />
+ 
+
+<p><b>Swimming</b></p>
+ 
+<p><b>Occurrence:</b> June 2nd – June 6th; 7:30-8:30 a.m <br /> 
+<b>Description:</b> we are happy to offer you morning swimming classes with instructor. We have reserved two corridors – each one with instructor. Maximum numbers of participants in each corridor is 6.Initial registration is needed<br />
+<b>Location:</b> “Overgaz Schkolo”, Mladost 2<br />
+<b>Places remaining: </b><h:outputText value="#{places.returnPlaces('Swimming')}" /> </p><br />
+ 
+
+<p><b>Running</b></p>
+ 
+<p><b>Occurrence:</b> June 30th, Start: 18:30<br />
+<b>Description:</b> Fun Run is a running adventure for a distance of 2 or 5 km.<br />
+<b>Location:</b> Hyundai off-road place (next to Sofia Business park)<br />
+<b>Places remaining: </b><h:outputText value="#{places.returnPlaces('Running')}" /> </p><br />
+ 
+ 
+ 
+<p><b>Tracking</b></p>
+ 
+<p><b>Occurrence:</b> June 28th <br />
+<b>Description:</b> This is the first time we offer hiking to 7 Rila lakes. This wellness adventure includes transportation and lift tickets expences. Each persion will be provided with a one meal food pack and a water bottle. If you wish to bring an additional person fell free to contact the wellness team.<br /> 
+<b>Location:</b> Starting point: Business Park Sofia, Destinatin : 7 Rila lakes and back to Sofia.
+<br />
+<b>Places remaining: </b><h:outputText value="#{places.returnPlaces('Tracking')}" /> </p><br />
+
+<div style="margin-left: 15px;">
+<a href="registration.xhtml">Registration</a>
+</div>
+</div>
+<div class="footer">
+<div style="margin-left: 15px;">
+<a href="log_in.xhtml">Admin Log in</a>
+</div>
+</div>
+</div>
+</h:body>
+</html>
+
+
+

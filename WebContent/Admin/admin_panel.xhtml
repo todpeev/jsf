@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- index.html -->
+<!-- Displays an h:dataTable of the addresses in the address book -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+   
+   <f:event listener="#{check.checkLogin}" type="preRenderView" />
+   <h:head>
+      <title>Administrative Panel</title>
+   </h:head>
+   <h:body> 
+      <h1>Subscribers</h1>
+		
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="Search subscribers by last name: " />
+			<h:inputText size = "19" id="lastName" value="#{search.lastName}"/>
+			<h:outputText value=" " />
+			<h:commandButton value="Search" action="#{search.search}"/>
+		</h:panelGrid>
+	</h:form>	
+	
+	<p></p>
+	<p></p>	
+	<p></p>
+	<p></p>
+	
+	<h:form>
+      <h:dataTable value="#{subscribersBean.subscribers}" var="subscribers"
+	   cellpadding="5" cellspacing="0">
+         	
+         <h:column>
+            <f:facet name="header">First Name</f:facet>
+            #{subscribers.firstName}
+         </h:column>
+
+		 <h:column>
+		 	<f:facet name="header">Last Name</f:facet>
+            #{subscribers.lastName}
+         </h:column>
+
+         <h:column>
+         	<f:facet name="header">Email</f:facet>
+            #{subscribers.email}
+         </h:column>
+         
+         <h:column>
+         	<f:facet name="header">Team</f:facet>
+            #{subscribers.team}
+         </h:column>
+         
+         <h:column>
+         	<f:facet name="header">Activity</f:facet>
+            #{subscribers.activity}
+         </h:column>
+
+         <h:column>
+         	<f:facet name="header">Action</f:facet>
+         	<h:commandButton value="Delete" action="#{subscribersBean.deleteSubscriber(subscribers)}"/>
+         </h:column>
+
+      </h:dataTable>
+      </h:form>
+   </h:body>
+</html>
+
+
